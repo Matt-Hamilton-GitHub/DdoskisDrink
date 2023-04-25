@@ -1,0 +1,11 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  margin: -10px;
+}
+
+html {
+  margin: 0;
+  background-color: #ffffffab;
+  /* background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png"); */
+}
