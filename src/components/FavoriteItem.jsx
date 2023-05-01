@@ -19,16 +19,29 @@ export default FavoriteItem;
 
 const Wrapper = styled.div`
   margin: 10px;
-  max-width: 200px;
-  max-height: 350px;
+  max-width: 300px;
+  max-height: 400px;
+  font-family: "Lexend", sans-serif;
+  font: 900;
+  width: 150px;
 
   img {
-    width: 20px;
+    width: 100px;
     border-radius: 100%;
     cursor: pointer;
-    border: solid 3px green;
+    border: solid 2px orange;
     transition: transform 0.6s;
-    box-shadow: 5px 6px 5px #ccc;
+    box-shadow: 5px 6px 5px #393e46;
+    /* clip-path: polygon(
+      20% 0%,
+      80% 0%,
+      100% 20%,
+      100% 80%,
+      80% 100%,
+      20% 100%,
+      0% 80%,
+      0% 20%
+    ); */
   }
 
   .drink-img {
@@ -36,5 +49,9 @@ const Wrapper = styled.div`
 
   img:hover {
     transform: scale(1.2);
+  }
+  h5 {
+    word-wrap: break-word;
+    color: black;
   }
 `;
