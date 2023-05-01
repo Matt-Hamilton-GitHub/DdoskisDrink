@@ -71,8 +71,8 @@ const SinglePageDrink = () => {
             })}
           </div>
           <div className="bottom-section">
-            <img src={dd} alt="chilling bear"/>
             <p>Enjoy it!</p>
+            <img src={dd} alt="chilling bear"/>
           </div>
         </div>
       ) : (
@@ -107,7 +107,7 @@ const Wrapper = styled.div`
     background-color: orange;
     cursor: pointer;
 
-
+    
   }
 
   .image-div {
@@ -157,20 +157,4 @@ const Wrapper = styled.div`
   }
 
 
-
-  //effects
-  @keyframes wiggle {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(-10deg);
-  }
-  75% {
-    transform: rotate(10deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
 `;
