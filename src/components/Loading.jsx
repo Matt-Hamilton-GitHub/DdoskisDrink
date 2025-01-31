@@ -2,19 +2,24 @@ import React from "react";
 import styled from "styled-components";
 
 const Loading = () => {
-  return <LoadingSpinner />;
+  return (
+  <Wrapper>
+    <div className="spinner" > </div>
+  </Wrapper>)
 };
 
-const LoadingSpinner = styled.div`
+const Wrapper = styled.div`
+
+ .spinner{
   position: relative;
-  left: 50%;
-  bottom: -50%;
   border: 3px solid black; /* Light grey */
   border-top: 3px solid orange;
   border-radius: 50%;
   width: 50px;
   height: 50px;
   animation: spin 2s linear infinite;
+
+}
 
   @keyframes spin {
     0% {

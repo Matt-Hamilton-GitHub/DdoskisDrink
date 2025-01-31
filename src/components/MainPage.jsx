@@ -3,20 +3,16 @@ import { Link } from "react-router-dom";
 
 import Item from "./Item";
 import favorites from "../assets/DdFavorite";
-import Star from "./Star";
-
 import "../styles.css";
 import styled from "styled-components";
 import TopSection from "./TopSection";
 
-import ddimg from "../assets/ddoski4.webp";
 import Loading from "./Loading";
 import { DDFavorite } from "./DDFavorite";
 
 export default function MainPage() {
   //url for the api to fetch the cocktails
   var URL = "https://www.thecocktaildb.com/api/json/v1/1/";
-
 
   //stores all the data received from the api, it is an array
   const [drinks, setDrinks] = useState([]);
@@ -29,15 +25,14 @@ export default function MainPage() {
     key: "name",
     searchType: "search.php?s="
   });
- const [isLoading, setIsLoading] = useState(true)
 
+ const [isLoading, setIsLoading] = useState(true)
   //show Ddoski's section
-  const [showFavorite, setShowFavorite] = useState(false);
+ const [showFavorite, setShowFavorite] = useState(false);
 
   const fetchData = async () => {
     setIsLoading(true)
     try {
-
       const response = await fetch(url);
       const data = await response.json();
       setDrinks(data.drinks);
@@ -45,10 +40,11 @@ export default function MainPage() {
       
       console.log('fetched:', data.drinks)
     } catch (error) {
-
+      setDrinks([]);
+      console.log(drinks)
     }
-
   };
+
 
   const filterSwitch = (t, q) => {
     setSearchParam((prev) => ({
@@ -69,6 +65,7 @@ export default function MainPage() {
   useEffect(() => {
     setUrl(`${URL}${searchParam.searchType}${keySearch}`);
     fetchData();
+    console.log(keySearch, url)
   }, [keySearch, searchParam]);
 
 
@@ -135,7 +132,7 @@ export default function MainPage() {
         {showFavorite ? (
           <DDFavorite props={favorites} />
         ) : (
-          <div></div>
+          <></>
         )}
 
         <div className="drinks-div">
